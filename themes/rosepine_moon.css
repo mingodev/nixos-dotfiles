@@ -1,0 +1,21 @@
+/*
+ Rosé Pine
+ Emilia Dunfelt <edun@dunfelt.se>
+ Source: https://github.com/edunfelt/base16-rose-pine-scheme/blob/main/rose-pine.yaml
+ */
+@define-color base00 #232136; /* # Dark BG */
+@define-color base01 #2A273F; /* # Slightly Less Dark BG */
+@define-color base02 #393552; /* # Less Dark BG */
+@define-color base03 #6E6A86; /* # Gray */
+@define-color base04 #908CAA; /* # Lighter Gray */
+@define-color base05 #e0def4; /* # Pale Gray (text) */
+@define-color base06 #e0def4; /* # Pale Gray (text) */
+@define-color base07 #56526E; /* # Dark Gray */
+@define-color base08 #Eb6F92; /* # Love */
+@define-color base09 #F6C177; /* # Gold */
+@define-color base0A #EA9A97; /* # Rosé */
+@define-color base0B #3E8FB0; /* # Pine */
+@define-color base0C #9CCFD8; /* # Turquoise */
+@define-color base0D #C4A7E7; /* # Mauve */
+@define-color base0E #F6C177; /* # Gold */
+@define-color base0F #56526E; /* # Dark Gray */
