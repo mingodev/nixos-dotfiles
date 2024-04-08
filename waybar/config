@@ -62,6 +62,15 @@
         "on-click": "pavucontrol",
         "on-click-right": "sh $HOME/.config/scripts/pulseaudio/mute_toggle.sh"
     },
+    "network": {
+	"interface": "wlan0",
+	"format": "_",
+	"format-ethernet": "E",
+	"format-wifi": "W",
+	"format-disconnected": "X",
+	"on-click": "kitty nmtui",
+	"on-click-right": "sh $HOME/.config.scripts/networkmanager/wifi_toggle.sh"
+    },
     "bluetooth": {
         "interface": "",
         "format-on": "",
