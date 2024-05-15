@@ -1,8 +1,13 @@
 #!/bin/bash
 
-grim $HOME/Pictures/Screenshots/$(date +'grim_%F_%H-%M-%S.png')
+screenshotFilename=$HOME/Pictures/Screenshots/$(date +'grim_all_%F_%H-%M-%S.png')
+
+grim $screenshotFilename
+
+if [ -e $screenshotFilename ]; then
 
 play $HOME/.config/hypr/assets/sounds/camera-shutter.mp3
 
-notify-send --urgency="low" "Screens captured" "A capture of all your screens has been saved in your screen saves folder." --icon="$HOME/.config/hypr/assets/icons/screen_capture.png"
+notify-send -i $screenshotFilename --urgency="low" "Screens captured" "A capture of all your screens has been saved in your screen saves folder."
 
+fi
