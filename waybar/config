@@ -6,7 +6,7 @@
     "margin-bottom": 0,
     "modules-left": ["custom/logo", "hyprland/workspaces", "custom/apps", "wlr/taskbar", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio","bluetooth"],
+    "modules-right": ["custom/notifications","pulseaudio","bluetooth","network"],
     "custom/logo": {
         "format": "",
         "tooltip": false,
@@ -47,8 +47,8 @@
     "custom/notifications": {
         "format": "{}",
         "tooltip-format": "{}",
-        "exec": "sh $HOME/.config/scripts/mako/get-mode.sh",
-        "on-click-right": "sh $HOME/.config/scripts/mako/toggle-dnd.sh",
+        "exec": "sh $HOME/.config/hypr/scripts/notifications/get-mode.sh",
+        "on-click-right": "sh $HOME/.config/hypr/scripts/notifications/toggle-dnd.sh",
         "return-type": "json",
         "interval": 1
     },
@@ -60,16 +60,22 @@
         },
         "scroll-step": 1,
         "on-click": "pavucontrol",
-        "on-click-right": "sh $HOME/.config/scripts/pulseaudio/mute_toggle.sh"
+        "on-click-right": "sh $HOME/.config/hypr/scripts/audio/mute_toggle.sh"
     },
     "network": {
-	"interface": "wlan0",
-	"format": "_",
-	"format-ethernet": "E",
-	"format-wifi": "W",
-	"format-disconnected": "X",
-	"on-click": "kitty nmtui",
-	"on-click-right": "sh $HOME/.config.scripts/networkmanager/wifi_toggle.sh"
+        "format": "",
+        "format-ethernet": "󰈀 ",
+        "format-wifi": "{icon}",
+        "format-disconnected": "󰤭",
+        "format-icons": {
+            "default": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
+        },
+        "tooltip-format": "{ifname}",
+        "tooltip-format-ethernet": "{bandwidthDownBits} 󰮏 / {bandwidthUpBits} 󰸇",
+        "tooltip-format-wifi": "{icon} {essid} ({signalStrength}%)\n{bandwidthDownBits} 󰮏 / {bandwidthUpBits} 󰸇",
+        "tooltip-format-disconnected": "󰤭 Disconnected",
+        "on-click": "kitty nmtui",
+        "on-click-right": "sh $HOME/.config/scripts/networkmanager/wifi_toggle.sh",
     },
     "bluetooth": {
         "interface": "",
@@ -78,11 +84,10 @@
         "format-disabled": "󰂲",
         "format-connected": " 󱡏",
         "on-click": "blueberry",
-        "on-click-right": "sh $HOME/.config/scripts/bluetooth/bluetooth_toggle.sh",
+        "on-click-right": "sh $HOME/.config/hypr/scripts/bluetooth/bluetooth_toggle.sh",
         "tooltip-format": "{num_connections} connected",
         "tooltip-format-connected": "{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
-    },
-    // "output": ["eDP-1", "HDMI-A-1"],
+    }
 }

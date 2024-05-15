@@ -16,6 +16,7 @@ window#waybar {
     background-color: transparent;   
     border: 2px solid transparent;
     border-radius: 10px;
+    margin-left: 10px;
 }
 
 tooltip {
@@ -85,8 +86,13 @@ button, label {
 }
 
 #taskbar button.active {
-    background-color: alpha(@rose, 0.6);
-    border-radius: 10px;
+    background-color: alpha(@base0B, 0.6);
+    border-radius: 12px;
+}
+
+#taskbar button:hover {
+    background-color: alpha(@base0C, 0.6);
+    border-radius: 12px;
 }
  
 #taskbar * {
@@ -122,8 +128,7 @@ button, label {
 #custom-logo, 
 #custom-apps,
 #clock, 
-#custom-notifications, 
-#pulseaudio,
+#custom-notifications,
 #custom-apps {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -141,13 +146,12 @@ button, label {
 #taskbar,
 #clock,
 #battery,
-#bluetooth,
-#custom-power {
+#network {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    margin-right: 10px;
     background-color: @bgcolor;
     border-color: @brdrcolor;
+    margin-right: 10px;
     border-width: 2px;
     border-style: solid;
     border-left: 0;
@@ -167,6 +171,10 @@ button, label {
     border-right: 2px solid @brdrcolor;
 }
 
+#network {
+    margin-right: 0px;
+}
+
 /* Classes */
 #custom-notifications.do-not-disturb,
 #pulseaudio.muted,
@@ -174,13 +182,13 @@ button, label {
 #network.disconnected,
 #temperature.critical
 {
-    color: @love;
+    color: @base08;
 }
 
 #custom-apps {
     padding: 0 6px 0 12px;
 }
 
-#custom-power {
-    padding: 0 12px 0 6px;
+#network {
+    padding: 0 16px 0 6px;
 }
